@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>i9TV | UniTV Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #E50914;
+            --accent: #2ecc71; /* Verde para destaque de 'Ao Vivo' */
+            --bg-dark: #080808;
+            --bg-card: #121212;
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(8, 8, 8, 0.9);
+            backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 1.6rem; font-weight: 800; }
+        .logo span { color: var(--primary); }
+
+        /* Hero & Destaque BBB */
+        .hero {
+            padding: 100px 8% 60px;
+            text-align: center;
+            background: radial-gradient(circle at top right, #200505 0%, #080808 50%);
+        }
+
+        .bbb-live {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(229, 9, 20, 0.15);
+            border: 1px solid var(--primary);
+            padding: 8px 20px; border-radius: 100px;
+            color: var(--primary); font-weight: 700;
+            margin-bottom: 30px; animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; }
+        }
+
+        .hero h1 { font-size: clamp(2rem, 6vw, 4rem); font-weight: 800; margin-bottom: 20px; letter-spacing: -2px; }
+        .hero p { color: var(--text-dim); max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; }
+
+        /* Botão WhatsApp */
+        .btn-ws {
+            background: #25D366; color: white;
+            padding: 20px 40px; border-radius: 15px;
+            font-weight: 800; font-size: 1.2rem;
+            text-decoration: none; display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+        .btn-ws:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+        /* Sobre UniTV */
+        .about-unitv {
+            padding: 60px 8%; background: var(--bg-card);
+            border-radius: 40px; margin: 40px 8%;
+            border: 1px solid var(--border);
+        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        
+        .feature-tag { 
+            background: var(--primary); padding: 4px 12px; 
+            border-radius: 5px; font-size: 0.7rem; font-weight: 800;
+        }
+
+        /* Grid de Canais */
+        .services { padding: 80px 8%; }
+        .grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
+        }
+        .card {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            padding: 30px; border-radius: 20px; transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .card i { color: var(--primary); font-size: 2rem; margin-bottom: 20px; display: block; }
+        .card h3 { margin-bottom: 10px; }
+        .card p { color: var(--text-dim); font-size: 0.9rem; }
+
+        /* Admin Trigger */
+        .admin-link { color: #333; font-size: 0.8rem; cursor: pointer; border: none; background: none; }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero { padding-top: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">i9<span>TV</span></div>
+    <button class="admin-link" onclick="toggleModal()">Acesso Restrito</button>
+</header>
+
+<section class="hero">
+    <div class="bbb-live">
+        <i class="fas fa-eye"></i> BBB 24 HORAS AO VIVO DISPONÍVEL
+    </div>
+    <h1>Tudo que você ama assistir, em um só lugar.</h1>
+    <p>A i9TV traz o poder do <strong>UniTV</strong> para sua tela: estabilidade 4K e a maior grade de canais do Brasil.</p>
+    
+    <a href="https://wa.me/5564996718993?text=Olá,%20vi%20o%20anúncio%20da%20i9TV%20e%20gostaria%20de%20fazer%20um%20teste%20grátis!" class="btn-ws">
+        QUERO MEU ACESSO AGORA <i class="fab fa-whatsapp"></i>
+    </a>
+</section>
+
+<section class="about-unitv">
+    <div class="about-grid">
+        <div>
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">O Poder do UniTV</h2>
+            <p style="margin-bottom: 20px;">O UniTV é o aplicativo de TV líder no Brasil. Ele oferece todos os canais ao vivo, categorizados para facilitar sua navegação. Com inteligência de recomendações, você encontra seu conteúdo favorito em segundos.</p>
+            <p style="color: var(--text-dim);">Focado em alta performance para <strong>Android Mobile e TV Box</strong>, garantindo reprodução fluida em ultra-alta definição 4K.</p>
+        </div>
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div class="card" style="padding: 20px;">
+                <span class="feature-tag">VOD</span>
+                <h4 style="margin-top:10px">Filmes e Séries</h4>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <span class="feature-tag">4K</span>
+                <h4 style="margin-top:10px">Ultra HD</h4>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <span class="feature-tag">AO VIVO</span>
+                <h4 style="margin-top:10px">Canais Brasil</h4>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <span class="feature-tag">KIDS</span>
+                <h4 style="margin-top:10px">Desenhos</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-tv"></i>
+            <h3>Canais Ao Vivo</h3>
+            <p>Esportes, Notícias e variedades com sinal estável e sem travamentos.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-film"></i>
+            <h3>Variedades</h3>
+            <p>Animações, programas de variedades e conteúdos exclusivos 24h.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-microchip"></i>
+            <h3>Otimizado para Android</h3>
+            <p>Performance máxima em dispositivos Android e TV Boxes de todas as marcas.</p>
+        </div>
+    </div>
+</section>
+
+<div id="loginModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center;">
+    <div style="background:#111; padding:40px; border-radius:20px; width:320px; border:1px solid #333;">
+        <h3 style="margin-bottom:20px">Admin</h3>
+        <form action="painel.php" method="POST">
+            <input type="text" name="usuario" placeholder="Login" style="width:100%; padding:12px; margin-bottom:10px; background:#000; border:1px solid #333; color:white;">
+            <input type="password" name="senha" placeholder="Senha" style="width:100%; padding:12px; margin-bottom:20px; background:#000; border:1px solid #333; color:white;">
+            <button type="submit" name="login" style="width:100%; padding:12px; background:var(--primary); color:white; border:none; border-radius:5px; font-weight:bold;">Entrar</button>
+            <button type="button" onclick="toggleModal()" style="width:100%; margin-top:10px; background:none; color:#555; border:none;">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function toggleModal() {
+        const m = document.getElementById('loginModal');
+        m.style.display = (m.style.display === 'none' || m.style.display === '') ? 'flex' : 'none';
+    }
+</script>
+
+</body>
+</html>
